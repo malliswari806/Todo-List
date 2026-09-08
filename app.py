@@ -9,7 +9,7 @@ app=Flask(__name__)
 load_dotenv()
 
 try:
-    connection=psycopg2.connect(host = 'localhost',database=os.getenv('DATABASE'),user=os.getenv('USER'),password=os.getenv('PASSWORD'),port=os.getenv('PORT'))
+    connection=psycopg2.connect(os.getenv('DB_URL))
     connection.autocommit=True
     cursor = connection.cursor()
 
